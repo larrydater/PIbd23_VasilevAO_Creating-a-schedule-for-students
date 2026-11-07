@@ -9,15 +9,13 @@ namespace Creating_a_schedule_for_students.Entities
     {
         public int Id { get; private set; }
         public string Name { get; private set; } = string.Empty;
-        public LessonType LessonTypes { get; private set; }
 
-        public static Discipline CreateEntity(int id, string name, LessonType lessonTypes)
+        public static Discipline CreateEntity(int id, string name)
         {
             return new Discipline
             {
                 Id = id,
                 Name = name ?? string.Empty,
-                LessonTypes = lessonTypes
             };
         }
     }

@@ -32,70 +32,119 @@ partial class FormCurriculumPlan
         groupBoxDisciplines.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)dataGridViewDisciplines).BeginInit();
         SuspendLayout();
+        // 
         // labelStudentGroup
+        // 
         labelStudentGroup.AutoSize = true;
-        labelStudentGroup.Location = new Point(12, 18);
+        labelStudentGroup.Location = new Point(17, 23);
         labelStudentGroup.Name = "labelStudentGroup";
+        labelStudentGroup.Size = new Size(58, 20);
+        labelStudentGroup.TabIndex = 0;
         labelStudentGroup.Text = "Группа";
+        // 
+        // labelSemester
+        // 
+        labelSemester.AutoSize = true;
+        labelSemester.Location = new Point(14, 75);
+        labelSemester.Name = "labelSemester";
+        labelSemester.Size = new Size(67, 20);
+        labelSemester.TabIndex = 2;
+        labelSemester.Text = "Семестр";
+        // 
         // comboBoxStudentGroup
+        // 
         comboBoxStudentGroup.DropDownStyle = ComboBoxStyle.DropDownList;
         comboBoxStudentGroup.FormattingEnabled = true;
-        comboBoxStudentGroup.Location = new Point(110, 15);
+        comboBoxStudentGroup.Location = new Point(126, 20);
+        comboBoxStudentGroup.Margin = new Padding(3, 4, 3, 4);
         comboBoxStudentGroup.Name = "comboBoxStudentGroup";
-        comboBoxStudentGroup.Size = new Size(250, 28);
-        // labelSemester
-        labelSemester.AutoSize = true;
-        labelSemester.Location = new Point(12, 56);
-        labelSemester.Name = "labelSemester";
-        labelSemester.Text = "Семестр";
+        comboBoxStudentGroup.Size = new Size(285, 28);
+        comboBoxStudentGroup.TabIndex = 1;
+        // 
         // numericUpDownSemester
-        numericUpDownSemester.Location = new Point(110, 53);
-        numericUpDownSemester.Maximum = 12M;
-        numericUpDownSemester.Minimum = 1M;
+        // 
+        numericUpDownSemester.Location = new Point(126, 71);
+        numericUpDownSemester.Margin = new Padding(3, 4, 3, 4);
+        numericUpDownSemester.Maximum = new decimal(new int[] { 12, 0, 0, 0 });
+        numericUpDownSemester.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
         numericUpDownSemester.Name = "numericUpDownSemester";
-        numericUpDownSemester.Size = new Size(120, 27);
-        numericUpDownSemester.Value = 1M;
+        numericUpDownSemester.Size = new Size(137, 27);
+        numericUpDownSemester.TabIndex = 3;
+        numericUpDownSemester.Value = new decimal(new int[] { 1, 0, 0, 0 });
+        numericUpDownSemester.ValueChanged += numericUpDownSemester_ValueChanged;
+        // 
         // groupBoxDisciplines
+        // 
         groupBoxDisciplines.Controls.Add(dataGridViewDisciplines);
-        groupBoxDisciplines.Location = new Point(12, 92);
+        groupBoxDisciplines.Location = new Point(12, 120);
+        groupBoxDisciplines.Margin = new Padding(3, 4, 3, 4);
         groupBoxDisciplines.Name = "groupBoxDisciplines";
-        groupBoxDisciplines.Size = new Size(536, 230);
+        groupBoxDisciplines.Padding = new Padding(3, 4, 3, 4);
+        groupBoxDisciplines.Size = new Size(613, 307);
+        groupBoxDisciplines.TabIndex = 4;
+        groupBoxDisciplines.TabStop = false;
         groupBoxDisciplines.Text = "Дисциплины";
+        // 
         // dataGridViewDisciplines
+        // 
         dataGridViewDisciplines.AllowUserToResizeRows = false;
         dataGridViewDisciplines.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         dataGridViewDisciplines.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dataGridViewDisciplines.Columns.AddRange(new DataGridViewColumn[] { ColumnDiscipline, ColumnLecturesCount, ColumnLabsCount });
         dataGridViewDisciplines.Dock = DockStyle.Fill;
+        dataGridViewDisciplines.Location = new Point(3, 24);
+        dataGridViewDisciplines.Margin = new Padding(3, 4, 3, 4);
         dataGridViewDisciplines.Name = "dataGridViewDisciplines";
         dataGridViewDisciplines.RowHeadersVisible = false;
+        dataGridViewDisciplines.RowHeadersWidth = 51;
+        dataGridViewDisciplines.Size = new Size(607, 279);
+        dataGridViewDisciplines.TabIndex = 0;
+        // 
         // ColumnDiscipline
+        // 
         ColumnDiscipline.HeaderText = "Дисциплина";
+        ColumnDiscipline.MinimumWidth = 6;
         ColumnDiscipline.Name = "ColumnDiscipline";
+        // 
         // ColumnLecturesCount
+        // 
         ColumnLecturesCount.HeaderText = "Лекций";
+        ColumnLecturesCount.MinimumWidth = 6;
         ColumnLecturesCount.Name = "ColumnLecturesCount";
+        // 
         // ColumnLabsCount
+        // 
         ColumnLabsCount.HeaderText = "Лабораторных";
+        ColumnLabsCount.MinimumWidth = 6;
         ColumnLabsCount.Name = "ColumnLabsCount";
+        // 
         // buttonSave
-        buttonSave.Location = new Point(300, 335);
+        // 
+        buttonSave.Location = new Point(343, 447);
+        buttonSave.Margin = new Padding(3, 4, 3, 4);
         buttonSave.Name = "buttonSave";
-        buttonSave.Size = new Size(120, 32);
+        buttonSave.Size = new Size(137, 43);
+        buttonSave.TabIndex = 5;
         buttonSave.Text = "Сохранить";
         buttonSave.UseVisualStyleBackColor = true;
         buttonSave.Click += ButtonSave_Click;
+        // 
         // buttonCancel
-        buttonCancel.Location = new Point(428, 335);
+        // 
+        buttonCancel.Location = new Point(489, 447);
+        buttonCancel.Margin = new Padding(3, 4, 3, 4);
         buttonCancel.Name = "buttonCancel";
-        buttonCancel.Size = new Size(120, 32);
+        buttonCancel.Size = new Size(137, 43);
+        buttonCancel.TabIndex = 6;
         buttonCancel.Text = "Отмена";
         buttonCancel.UseVisualStyleBackColor = true;
         buttonCancel.Click += ButtonCancel_Click;
+        // 
         // FormCurriculumPlan
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        // 
+        AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(560, 382);
+        ClientSize = new Size(640, 509);
         Controls.Add(labelStudentGroup);
         Controls.Add(comboBoxStudentGroup);
         Controls.Add(labelSemester);
@@ -104,6 +153,7 @@ partial class FormCurriculumPlan
         Controls.Add(buttonSave);
         Controls.Add(buttonCancel);
         FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(3, 4, 3, 4);
         MaximizeBox = false;
         MinimizeBox = false;
         Name = "FormCurriculumPlan";

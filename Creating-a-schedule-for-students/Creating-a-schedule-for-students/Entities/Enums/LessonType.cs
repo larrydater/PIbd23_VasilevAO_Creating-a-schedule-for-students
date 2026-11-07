@@ -4,8 +4,6 @@ using System.Text;
 
 namespace Creating_a_schedule_for_students.Entities.Enums
 {
-
-    [Flags]
     public enum LessonType
     {
         None = 0,

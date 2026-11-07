@@ -19,8 +19,6 @@ partial class FormDiscipline
     {
         labelName = new Label();
         textBoxName = new TextBox();
-        labelLessonTypes = new Label();
-        checkedListBoxLessonTypes = new CheckedListBox();
         buttonSave = new Button();
         buttonCancel = new Button();
         SuspendLayout();
@@ -33,26 +31,15 @@ partial class FormDiscipline
         textBoxName.Location = new Point(170, 15);
         textBoxName.Name = "textBoxName";
         textBoxName.Size = new Size(250, 27);
-        // labelLessonTypes
-        labelLessonTypes.AutoSize = true;
-        labelLessonTypes.Location = new Point(12, 57);
-        labelLessonTypes.Name = "labelLessonTypes";
-        labelLessonTypes.Text = "Виды занятий";
-        // checkedListBoxLessonTypes
-        checkedListBoxLessonTypes.CheckOnClick = true;
-        checkedListBoxLessonTypes.FormattingEnabled = true;
-        checkedListBoxLessonTypes.Location = new Point(170, 54);
-        checkedListBoxLessonTypes.Name = "checkedListBoxLessonTypes";
-        checkedListBoxLessonTypes.Size = new Size(250, 70);
         // buttonSave
-        buttonSave.Location = new Point(170, 144);
+        buttonSave.Location = new Point(170, 63);
         buttonSave.Name = "buttonSave";
         buttonSave.Size = new Size(120, 32);
         buttonSave.Text = "Сохранить";
         buttonSave.UseVisualStyleBackColor = true;
         buttonSave.Click += ButtonSave_Click;
         // buttonCancel
-        buttonCancel.Location = new Point(300, 144);
+        buttonCancel.Location = new Point(300, 63);
         buttonCancel.Name = "buttonCancel";
         buttonCancel.Size = new Size(120, 32);
         buttonCancel.Text = "Отмена";
@@ -61,7 +48,7 @@ partial class FormDiscipline
         // FormDiscipline
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(440, 191);
+        ClientSize = new Size(440, 110);
         FormBorderStyle = FormBorderStyle.FixedDialog;
         MaximizeBox = false;
         MinimizeBox = false;
@@ -70,8 +57,6 @@ partial class FormDiscipline
         Text = "Дисциплина";
         Controls.Add(labelName);
         Controls.Add(textBoxName);
-        Controls.Add(labelLessonTypes);
-        Controls.Add(checkedListBoxLessonTypes);
         Controls.Add(buttonSave);
         Controls.Add(buttonCancel);
         ResumeLayout(false);
@@ -82,8 +67,6 @@ partial class FormDiscipline
 
     private Label labelName;
     private TextBox textBoxName;
-    private Label labelLessonTypes;
-    private CheckedListBox checkedListBoxLessonTypes;
     private Button buttonSave;
     private Button buttonCancel;
 }

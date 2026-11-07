@@ -15,7 +15,7 @@ internal class DisciplineRepository : IDisciplineRepository
 
     public Discipline ReadDisciplineById(int id)
     {
-        return Discipline.CreateEntity(0, string.Empty, LessonType.None);
+        return Discipline.CreateEntity(0, string.Empty);
     }
 
     public IEnumerable<Discipline> ReadDisciplines()

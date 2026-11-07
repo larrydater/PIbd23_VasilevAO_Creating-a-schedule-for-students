@@ -74,4 +74,9 @@ public partial class FormCurriculumPlan : Form
 
         return list;
     }
+
+    private void numericUpDownSemester_ValueChanged(object sender, EventArgs e)
+    {
+
+    }
 }

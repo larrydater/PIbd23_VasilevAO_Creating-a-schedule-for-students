@@ -32,7 +32,7 @@ public partial class FormLesson : Form
         comboBoxDiscipline.DisplayMember = "Name";
         comboBoxDiscipline.ValueMember = "Id";
 
-        comboBoxLessonType.DataSource = new[] { LessonType.Lecture, LessonType.Laboratory };
+        comboBoxLessonType.DataSource = Enum.GetValues(typeof(LessonType));
         comboBoxWeekDay.DataSource = Enum.GetValues(typeof(WeekDay));
     }
 
@@ -44,7 +44,7 @@ public partial class FormLesson : Form
                 comboBoxStudentGroup.SelectedIndex < 0 ||
                 comboBoxTeacher.SelectedIndex < 0 ||
                 comboBoxDiscipline.SelectedIndex < 0 ||
-                comboBoxLessonType.SelectedIndex < 0 ||
+                comboBoxLessonType.SelectedIndex < 1 ||
                 comboBoxWeekDay.SelectedIndex < 1)
             {
                 throw new Exception("Имеются незаполненные поля");

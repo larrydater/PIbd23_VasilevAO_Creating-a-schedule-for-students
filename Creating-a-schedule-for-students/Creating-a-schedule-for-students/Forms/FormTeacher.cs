@@ -24,7 +24,14 @@ public partial class FormTeacher : Form
                 }
 
                 textBoxName.Text = teacher.Name;
-                comboBoxTeacherPost.SelectedItem = teacher.TeacherPost;
+                foreach (TeacherPost elem in Enum.GetValues(typeof(TeacherPost)))
+                {
+                    if (elem != TeacherPost.None && (elem & teacher.TeacherPost) != 0)
+                    {
+                        checkedListBoxTeacherPost.SetItemChecked(
+                            checkedListBoxTeacherPost.Items.IndexOf(elem), true);
+                    }
+                }
                 _teacherId = value;
             }
             catch (Exception ex)
@@ -40,14 +47,20 @@ public partial class FormTeacher : Form
         InitializeComponent();
         _teacherRepository = teacherRepository ??
             throw new ArgumentNullException(nameof(teacherRepository));
-        comboBoxTeacherPost.DataSource = Enum.GetValues(typeof(TeacherPost));
+        foreach (TeacherPost elem in Enum.GetValues(typeof(TeacherPost)))
+        {
+            if (elem != TeacherPost.None)
+            {
+                checkedListBoxTeacherPost.Items.Add(elem);
+            }
+        }
     }
 
     private void ButtonSave_Click(object sender, EventArgs e)
     {
         try
         {
-            if (string.IsNullOrWhiteSpace(textBoxName.Text) ||comboBoxTeacherPost.SelectedIndex < 1)
+            if (string.IsNullOrWhiteSpace(textBoxName.Text) || checkedListBoxTeacherPost.CheckedItems.Count == 0)
             {
                 throw new Exception("Имеются незаполненные поля");
             }
@@ -72,5 +85,16 @@ public partial class FormTeacher : Form
 
     private void ButtonCancel_Click(object sender, EventArgs e) => Close();
 
-    private Teacher CreateTeacher(int id) => Teacher.CreateEntity(id,textBoxName.Text,(TeacherPost)comboBoxTeacherPost.SelectedItem!);
+    private Teacher CreateTeacher(int id)
+    {
+        var teacherPost = TeacherPost.None;
+        foreach (var elem in checkedListBoxTeacherPost.CheckedItems)
+        {
+            teacherPost |= (TeacherPost)elem;
+        }
+
+        return Teacher.CreateEntity(id,
+            textBoxName.Text,
+            teacherPost);
+    }
 }
